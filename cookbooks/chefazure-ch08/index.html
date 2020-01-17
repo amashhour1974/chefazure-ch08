@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"532da0a1e4","applicationID":"12967224","transactionName":"dA5bFkFZCglRRB0WBVAERk1EUwoGW1tX","queueTime":0,"applicationTime":24,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"532da0a1e4",applicationID:"12967224"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <title>Welcome - The resource for Chef cookbooks - Chef Supermarket</title>
+    <meta name="description" content="Supermarket is Chef&#39;s open-source community platform. Find, explore and view Chef cookbooks for all of your ops needs.">
+    <link rel="shortcut icon" href="https://supermarket.chef.io/assets/favicon-5f4080fbaa493463c163433fc3c7f57b891e43a00694557ac29c057cc7f62803.ico" type="image/x-icon">
+    <link rel="icon" href="https://supermarket.chef.io/assets/favicon-5f4080fbaa493463c163433fc3c7f57b891e43a00694557ac29c057cc7f62803.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://supermarket.chef.io/assets/apple-touch-icon-6b780c56b7f9d4c8a0a4c74db65cebdcdf2cd6f4884bcd7df82334033ae03b8e.png"/>
+    <link rel="stylesheet" media="all" href="/assets/application-5a872bcb0db9e7beb245966fce4fe01f94ff330845a75886ce2e8a26ed742253.css" />
+      <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+      <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Ewk9c3S77PY2nta0rmTKpgTLGj02ERmm9bJyv0/K33YWbKFJbPNh7BSRpQP+baPmeZqlg3UyT+lhccwZC3ZmNw==" />
+        <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+    analytics.load("yupAEj8R2rmfaLncE3NlfcMp4o34GLSP");
+    analytics.page();
+    }}();
+  </script>
+
+
+  </head>
+  <body class="pages">
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <!-- Chef Property Menu -->
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list show-for-medium-down">
+            <li><a href="/cookbooks-directory">Cookbooks</a></li>
+              <li><a href="/tools">Tools &amp; Plugins</a></li>
+            <li class="more-info"><a>More Info</a></li>
+              <li><a rel="sign_in nofollow" data-method="post" href="/auth/chef_oauth2">Sign In</a></li>
+          </ul>
+          <ul class="off-canvas-list">
+            <li><a target="_blank" href="https://www.chef.io">Get Chef</a></li>
+            <li><a target="_blank" href="https://learn.chef.io">Learn Chef</a></li>
+            <li><a target="_blank" href="https://docs.chef.io">Docs</a></li>
+            <li><a target="_blank" href="https://www.chef.io/training">Training</a></li>
+            <li><a target="_blank" href="https://botbot.me/freenode/chef">Botbot IRC Logs</a></li>
+          </ul>
+        </aside>
+
+        <header class="globalheader">
+          <a class="left-off-canvas-toggle fa fa-bars"><span class="hide">Menu</span></a>
+          <div class="inner_wrap">
+            <div class="logo_and_nav_toggle">
+              <h2 class="logochef"><a href="/"><span>Chef Supermarket</span></a></h2>
+            </div>
+            <nav class="appnav">
+  <ul class="mainnav hide-for-medium-down">
+    <li><a data-hover="Cookbooks" rel="cookbooks" href="/cookbooks-directory">Cookbooks</a></li>
+      <li><a href="/tools-directory">Tools &amp; Plugins</a></li>
+    <li class="more-info"><a>More Info</a></li>
+  </ul>
+  <div class="usermenu">
+    <ul>
+      <li class="sign_in_create_account"><a href="https://manage.chef.io/signup?ref=community">Create Account</a></li>
+      <li class="sign_in_create_account"><a rel="sign_in nofollow" data-method="post" href="/auth/chef_oauth2">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
+
+          </div>
+        </header>
+
+          <div class="announcement_banner">
+  <div class="announcement_banner_content">
+
+    <div class="announcement_info">
+      <h3>Adoptable Cookbooks List</h3>
+
+      <p>
+        Looking for a cookbook to adopt?  You can now see a list of cookbooks available for adoption!
+        <br />
+        <a href="/available_for_adoption">List of Adoptable Cookbooks</a>
+      </p>
+    </div>
+
+    <div class="announcement_info">
+      <h3>Supermarket Belongs to the Community</h3>
+
+      <p>Supermarket belongs to the community. While Chef has the responsibility to keep it running and be stewards of its functionality, what it does and how it works is driven by the community. The <a href="https://github.com/chef/supermarket">chef/supermarket</a> repository will continue to be where development of the Supermarket application takes place. Come be part of shaping the direction of Supermarket by opening issues and pull requests or by joining us on the <a href="https://discourse.chef.io/">Chef Mailing List</a>.</p>
+    </div>
+
+    <div class="announcement_info">
+      <h3><a href="/documentation">View our collection of guides, documentation, and articles</a></h3>
+    </div>
+  </div>
+</div>
+
+
+        
+        <form class="search_form" action="/cookbooks" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search_bar">
+    <div class="quick_search">
+      <div class="search_toggle">
+        <a class="button expand large" data-dropdown="search-types" rel="toggle-search-types"><span>Cookbooks</span> <i class="fa fa-chevron-down"></i></a>
+
+        <ul id="search-types" data-dropdown-content class="f-dropdown">
+          <li><a href="#" data-url=/cookbooks rel="toggle-cookbook-search">Cookbooks</a></li>
+          <li><a href="#" data-url=/tools rel="toggle-tool-search">Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="search_field">
+        <i class="fa fa-search"></i>
+        <input type="search" name="q" id="q" placeholder="Search" class="cookbook_search_textfield" />
+      </div>
+
+      
+
+      <div class="search_button">
+        <button type="submit" class="cookbook_search_button">
+          GO
+</button>      </div>
+
+      <div class="advanced_search_toggle">
+        <span>Advanced Options <i class="fa fa-chevron-down" id="toggle-arrow"></i><span>
+      </div>
+    </div>
+  </div>
+
+  <div class="advanced_search_body">
+    <h4> Select Badges</h4>
+    <div class="advanced_search_badges" >
+
+        <div class="advanced_search_badge">
+            <label>
+              <input type="checkbox" name="badges[]" id="badges_partner" value="partner" />
+              partner
+            </label>
+        </div>
+    </div>
+
+    <h4> Select Supported Platforms </h4>
+    <div class = "advanced_search_platforms" >
+
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="aix" />
+              aix
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="amazon" />
+              amazon
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="centos" />
+              centos
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="debian" />
+              debian
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="fedora" />
+              fedora
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="freebsd" />
+              freebsd
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="gentoo" />
+              gentoo
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="mac_os_x" />
+              mac_os_x
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="omnios" />
+              omnios
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="openbsd" />
+              openbsd
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="opensuse" />
+              opensuse
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="opensuseleap" />
+              opensuseleap
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="oracle" />
+              oracle
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="redhat" />
+              redhat
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="ubuntu" />
+              ubuntu
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="scientific" />
+              scientific
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="smartos" />
+              smartos
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="solaris" />
+              solaris
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="suse" />
+              suse
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="windows" />
+              windows
+            </label>
+        </div>
+        <div class="advanced_search_platform">
+            <label>
+              <input type="checkbox" name="platforms[]" id="platforms_" value="zlinux" />
+              zlinux
+            </label>
+        </div>
+    </div>
+
+    <div class= "advanced_textfield">
+      <input type="search" name="platforms[]" id="platforms_" placeholder="You can write in a platform name here if it&#39;s not listed above" class="platform_search_textfield" />
+    </div>
+  </div>
+</form>
+
+        <div class="container">
+          
+
+
+<div class="page withspace">
+
+  <section class="sign_up_in">
+    <h2 class="text-center">Welcome to Supermarket. Find, explore and view Chef cookbooks for all of your ops needs.</h2>
+
+    <p class="text-center">
+      <a class="button radius" href="https://manage.chef.io/signup?ref=community">Sign Up For a Chef Account</a>
+      <a class="button radius" href="/sign-in">Sign In With Your Chef Account</a>
+    </p>
+  </section>
+
+  <section class="welcome_resources">
+    <div>
+      <h2>Explore</h2>
+
+      <ul>
+        <li>
+          <a href="/cookbooks">Browse Cookbooks</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.chef.io/blog">Read the Chef Blog</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Learn</h2>
+      <ul>
+        <li>
+          <a target="_blank" href="https://learn.chef.io">Learn Chef</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://docs.chef.io">Read the Chef Docs</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://docs.chef.io/community_guidelines.html">Community Guidelines</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://docs.chef.io/community_contributions.html">How to Contribute</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Share</h2>
+      <ul>
+        <li>
+          <a target="_blank" href="https://docs.chef.io/knife_supermarket.html#share">Share your cookbooks</a>
+        </li>
+        <li>
+          <a href="http://community-slack.chef.io/">Join Chef Community Slack</a>
+        </li>
+        <li>
+          <a href="https://discourse.chef.io/" target="_blank">Join the Chef Mailing List</a>
+        </li>
+        <li>
+          <a href="https://github.com/chef/supermarket" target="_blank">Contribute to Supermarket</a>
+        </li>
+        <li>
+          <a href="https://feedback.chef.io" target="_blank">Share Your Ideas for Improving Chef</a>
+        </li>
+      </ul>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cookbooks_stats">
+    <h2>Community Stats</h3>
+    <span class="stat"><span class="number">3,891 Cookbooks</span></span>
+<span class="stat"><span class="number">78,567 Chefs</span></span>
+
+  </section>
+</div>
+
+        </div>
+        <footer class="footer">
+          &copy; 2008&thinsp;&ndash;&thinsp;2020 Chef Software, Inc. All Rights Reserved.
+          <br><br><a href="https://docs.chef.io/community_guidelines.html">Code of Conduct</a>
+          <a href="https://www.chef.io/terms-of-service">Terms and Conditions of Use</a>
+          <a href="https://www.chef.io/privacy-policy">Privacy Policy</a>
+          <a href="https://www.chef.io/trademark-policy">Trademark Policy</a>
+          <a href="http://status.chef.io">Status</a>
+        </footer>
+
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div>
+
+    <script src="/assets/application-db6872006cf91fc855c43ec9bce63c7f7ed683e10d176816d0696f06303f7d91.js"></script>
+  </body>
+</html>

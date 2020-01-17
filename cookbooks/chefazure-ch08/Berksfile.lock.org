@@ -1,0 +1,18 @@
+DEPENDENCIES
+  chefazure-ch08
+    path: .
+    metadata: true
+  jenkins
+
+GRAPH
+  chefazure-ch08 (0.1.2)
+    jenkins (>= 0.0.0)
+  dpkg_autostart (0.2.0)
+  jenkins (7.1.0)
+    dpkg_autostart (>= 0.0.0)
+    runit (>= 1.7)
+  packagecloud (1.0.1)
+  runit (5.1.2)
+    packagecloud (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  yum-epel (3.3.0)
