@@ -7,7 +7,7 @@ end
 
 azure_resource_template 'jenkins-server' do
   resource_group 'chefazure-ch08-ci'
-  template_source '#{Chef::Config[:cookbook_path]}/chefazure-ch08/files/shared/machine_deploy.json'
+  template_source "#{Chef::Config[:cookbook_path]}/chefazure-ch08/files/shared/machine_deploy.json"
   parameters location: 'West Europe',
              vmSize: 'Basic_A1',
              newStorageAccountName: 'chazch8ci',

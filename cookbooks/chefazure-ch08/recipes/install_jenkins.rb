@@ -3,7 +3,7 @@ include_recipe 'jenkins::master'
 package 'git' do
   action :install
 end
-  
+
 jenkins_plugin 'github' do
   action :install
   notifies :restart, 'service[jenkins]', :delayed
