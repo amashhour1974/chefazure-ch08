@@ -1,4 +1,4 @@
-# # encoding: utf-8
+# encoding: utf-8
 
 # Inspec test for recipe chefazure-ch08::default
 
